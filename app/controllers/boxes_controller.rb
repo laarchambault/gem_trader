@@ -5,8 +5,7 @@ class BoxesController < ApplicationController
 
     def show
         @box = Box.find(params[:id])
-        @user_cards = User.first.cards
         @box_random_cards_common = @box.box_for_common
-        @user_cards << @box_random_cards_common
+        current_user.cards << @box_random_cards_common
     end
 end

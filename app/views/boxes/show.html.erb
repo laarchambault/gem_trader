@@ -6,8 +6,6 @@
 <% end %>
 </ul>
 
-<% @user_cards.each do |card| %>
-    <%= card.name %><br>
-<% end %>
+<%= link_to "Return to Profile", user_path(current_user) %>
 
 <!-- take the @ random attribute and match it with cards to give to the @user -->

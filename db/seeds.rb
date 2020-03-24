@@ -11,8 +11,6 @@ Box.destroy_all
 BoxCard.destroy_all
 UserCard.destroy_all
 
-<<<<<<< HEAD
-
 
 #==============================================common
 Card.create(name: "Coal", points_worth: 5)
@@ -23,7 +21,6 @@ Card.create(name: "Lapis Lazuli", points_worth: 20)
 Card.create(name: "Rad Ruby", points_worth: 25)
 #+=================================================uncommon
 Card.create(name: "Moldavite", points_worth: 27)
->>>>>>> 7a6a38ef515ab0d788ec2574675824c710cbc8a4
 Card.create(name: "Lemon Quartz", points_worth: 30)
 Card.create(name: "Labradorite", points_worth: 34)
 Card.create(name: "Amber", points_worth: 40)
