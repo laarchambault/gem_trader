@@ -12,7 +12,6 @@ BoxCard.destroy_all
 UserCard.destroy_all
 
 
-
 #==============================================common
 Card.create(name: "Coal", points_worth: 5)
 Card.create(name: "Moss Agate", points_worth: 10)
