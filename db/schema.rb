@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_185936) do
+ActiveRecord::Schema.define(version: 2020_03_24_161354) do
 
   create_table "box_cards", force: :cascade do |t|
     t.integer "card_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_185936) do
     t.integer "points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
