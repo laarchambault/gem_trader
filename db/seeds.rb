@@ -35,7 +35,7 @@ Box.create(rarity: "Common", cost: 50)
 Box.create(rarity: "Uncommon", cost: 150)
 Box.create(rarity: "Rare", cost: 1000)
 
-5.times do
+20.times do
     BoxCard.create(card_id: Card.all.sample.id, box_id: Box.all.sample.id)
 end
 
