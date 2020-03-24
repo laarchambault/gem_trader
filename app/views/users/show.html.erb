@@ -1,0 +1,12 @@
+<h1><%= @user.name%></h1>
+<h2>Points: <%=current_user.points%></h2>
+
+<h2>All Your Cards</h2>
+    <ul>
+        <% current_user.cards.each do |card|%>
+            <p><%= card.name %></p>
+            <p><%= card.points_worth %></p><br>
+        <% end %>
+    </ul>
+
+<%=link_to "Sell Cards", 'users/select_cards'%>
