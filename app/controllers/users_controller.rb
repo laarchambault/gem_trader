@@ -23,10 +23,11 @@ class UsersController < ApplicationController
     end
 
     def select_cards
-        
+        render :sell
     end
 
     def sell_cards
+        byebug
         #User.sell_card method
         redirect_to user_path(@user)
     end
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :password, :password_confirmation)
+        params.require(:user).permit(:name, :password, :password_confirmation, :cards_to_sell => [])
     end
 
     def require_login

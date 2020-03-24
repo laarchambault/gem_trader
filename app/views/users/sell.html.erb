@@ -1,0 +1,9 @@
+<h1>Gem Market</h1>
+<h2>Ready to sell? Select the cards you wish you sell below.</h2>
+<%= form_tag '/sell_cards' do %>
+<%= collection_check_boxes(:user, :cards_to_sell, current_user.cards, :user_card_id, :display_card) %>
+<%= submit_tag "Sell these Cards"%>
+
+<% end %>
+
+<%= link_to "Nevermind, don't sell", user_path(current_user)%>

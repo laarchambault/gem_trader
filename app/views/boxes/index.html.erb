@@ -1,7 +1,7 @@
 <ul>
 
 <% @boxes.each do |box| %>
-    <li> <%= link_to box.rarity, boxes_path(box) %> Cost: <%= box.cost %> </li>
+    <li> <%= link_to box.rarity, "/boxes/#{box.id}" %> Cost: <%= box.cost %> </li>
 <% end %>
 
 </ul>
