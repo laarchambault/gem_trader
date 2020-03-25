@@ -30,13 +30,14 @@ class UsersController < ApplicationController
     end
 
     def sell_cards
-        # #byebug
-        # params[:user][:cards_to_sell].each do |c_id| 
-        #     current_user.cards.delete(current_user.card_id: c_id)
-        # end
-        # #User.sell_card method
-        # redirect_to user_path(@user)
+        params[:user][:cards_to_sell].each do |card_id|
+            #byebug
+            search_cards_and_remove(card_id)
+        end
+        redirect_to user_path(current_user)
     end
+
+
 
 
     private
