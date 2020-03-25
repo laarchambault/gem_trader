@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get '/boxes' => 'boxes#index'
-  get '/boxes/:id' => 'boxes#show'
+  resources :boxes, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: [:new, :create, :show]
   get '/', to: 'welcome#home'
