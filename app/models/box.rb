@@ -1,8 +1,8 @@
 class Box < ApplicationRecord
     has_many :box_cards
     has_many :cards, through: :box_cards
-
-    def box_for_common
+    
+    def box_populate
         arr = []
         self.cards.map do |card|
             if card.points_worth.between?(5,25) && self.rarity == "Common"

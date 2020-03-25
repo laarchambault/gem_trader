@@ -1,0 +1,10 @@
+<h1>Leaderboard</h1>
+
+<ol>
+    <% @users.sort_by do |user| %>
+    <li>
+        <%= user.name %>: <%= user.points %>
+    </li>
+    <br>
+    <% end %>
+</ol>

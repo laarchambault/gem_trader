@@ -2,6 +2,9 @@ class UsersController < ApplicationController
     before_action :require_login
     skip_before_action :require_login, only: [:new, :create]
 
+    def index
+        @users = User.all
+    end
     def new
         @user = User.new
     end
@@ -27,12 +30,12 @@ class UsersController < ApplicationController
     end
 
     def sell_cards
-        #byebug
-        params[:user][:cards_to_sell].each do |c_id| 
-            current_user.cards.delete(current_user.card_id: c_id)
-        end
-        #User.sell_card method
-        redirect_to user_path(@user)
+        # #byebug
+        # params[:user][:cards_to_sell].each do |c_id| 
+        #     current_user.cards.delete(current_user.card_id: c_id)
+        # end
+        # #User.sell_card method
+        # redirect_to user_path(@user)
     end
 
 

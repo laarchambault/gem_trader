@@ -1,11 +1,9 @@
 <%= @box.rarity %><br>
 
 <ul>
-<% @box_random_cards_common.each do |card| %> <!-- refactor and move to controller -->
+<% @box_cards.each do |card| %>
     <li> <%= card.name %>: <%= card.points_worth %> </li>
 <% end %>
 </ul>
 
 <%= link_to "Return to Profile", user_path(current_user) %>
-
-<!-- take the @ random attribute and match it with cards to give to the @user -->
