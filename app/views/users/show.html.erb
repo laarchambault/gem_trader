@@ -1,5 +1,10 @@
 <h1><%= @user.name%></h1>
 <h2>Points: <%=current_user.points%></h2>
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %><br><br>
 
 <h2>All Your Cards</h2>
     <ul>

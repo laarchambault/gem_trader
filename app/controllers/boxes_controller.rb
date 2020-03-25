@@ -1,4 +1,6 @@
 class BoxesController < ApplicationController
+    before_action :require_login
+
     def index
         @boxes = Box.all
     end
@@ -11,6 +13,14 @@ class BoxesController < ApplicationController
             current_user.update(points: current_user.points - @box.cost)
         else
             return redirect_to user_path(current_user)
+        end
+    end
+
+    private 
+    def require_login
+        if !session.include? :user_id
+            flash[:message] = "You must be logged in before viewing that page."
+            redirect_to '/'
         end
     end
 end

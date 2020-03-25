@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
     
     def destroy
         session.delete :user_id
+        flash[:notice] = "Logout successful. Thanks for using Gem Trader!"
         redirect_to '/'
     end
 

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
         @user.points = 50
         if @user.save
             session[:user_id] = @user.id
+            flash[:notice] = "Your account has been created. To get started, buy a box!"
             redirect_to user_path(@user)
         else
             render :new
@@ -22,7 +23,6 @@ class UsersController < ApplicationController
 
     def show
         @user = current_user
-        #figure out how to create a session user
     end
 
     def select_cards
@@ -31,9 +31,9 @@ class UsersController < ApplicationController
 
     def sell_cards
         params[:user][:cards_to_sell].each do |card_id|
-            #byebug
             search_cards_and_remove(card_id)
         end
+        flash[:notice] = "Sale successful. Congrats!"
         redirect_to user_path(current_user)
     end
 
@@ -47,6 +47,9 @@ class UsersController < ApplicationController
     end
 
     def require_login
-        return head(:forbidden) unless session.include? :user_id
+        if !session.include? :user_id
+            flash[:alert] = "You must be logged in before viewing that page."
+            redirect_to '/'
+        end
     end
 end
