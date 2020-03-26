@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:new, :create]
+    skip_before_action :require_login, only: [:new, :create, :index]
 
     def index
-        @users = User.all
+        @top_users = User.top_five_users
+        @oldest = User.oldest
+        @newest = User.newest
+        @richest = User.richest
+        @biggest_hand = User.most_cards
+        @highest_card_user = User.highest_card
+        @highest_hand = User.highest_hand
     end
     def new
         @user = User.new

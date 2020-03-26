@@ -15,4 +15,6 @@
 <%= f.label :password_confirmation%>
 <%= f.password_field :password_confirmation%><br>
 <%= f.submit "Create Account"%>
-<% end %>
+<% end %><br><br>
+
+Existing user? <%= link_to "Sign In", login_path %>

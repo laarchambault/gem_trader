@@ -1,10 +1,127 @@
-<h1>Leaderboard</h1>
+<h1>Leaderboard</h1><br>
+<% if current_user %>
+    <%= link_to "View Your Cards", user_path(current_user)%>
+<% else %>
+    <%= link_to "Return to Home Screen", '/'%>
+<% end %>
 
-<ol>
-    <% @users.sort_by do |user| %>
-    <li>
-        <%= user.name %>: <%= user.points %>
-    </li>
-    <br>
+<h2>Richest Player</h2>
+<h3>Player with the most points</h3>
+<% if @richest %>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td><%=@richest.name%></td>
+            <td><%=@richest.points%></td>
+        </tr>
+    </table>
+<% else %>
+<p>No Player Found!</p>
+<% end %><br><br>
+
+<h2>Highest Scoring Card</h2>
+<h3>Player with the single card worth the most points</h3>
+<% if @highest_card_user %>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Card</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td><%=@highest_card_user.name%></td>
+            <td><%=@highest_card_user.highest_card.name%></td>
+            <td><%=@highest_card_user.points_from_highest_card%></td>
+        </tr>
+    </table>
+<% else %>
+<p>No Player Found!</p>
+<% end %><br><br>
+
+<h2>Highest Scoring Hand</h2>
+<h3>Player with the most points in hand</h3>
+<% if @highest_hand%>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Number of Cards</th>
+        <th>Total Points in Hand</th>
+    </tr>
+    <tr>
+        <td><%=@highest_hand.name%></td>
+        <td><%=@highest_hand.num_of_cards%></td>
+        <td><%=@highest_hand.hand_total%></td>
+    </tr>
+</table>
+<% else %>
+<p>No Player Found!</p>
+<% end %><br><br>
+
+<h2>Biggest Hand</h2>
+<h3>Player with the most cards</h3>
+<% if @biggest_hand%>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Number of Cards</th>
+        </tr>
+        <tr>
+            <td><%=@biggest_hand.name%></td>
+            <td><%=@biggest_hand.num_of_cards%></td>
+        </tr>
+    </table>
+<% else %>
+<p>No Player Found!</p>
+<% end %><br><br>
+
+<h2>Oldest Player</h2>
+<h3>Player who has been on Gem Trader the longest</h3>
+<% if @oldest%>
+    <table>
+        <tr>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td><%=@oldest.name%></td>
+        </tr>
+    </table>
+<% else %>
+<p>No Player Found!</p>
+<% end %><br><br>
+
+<h2>Newest Player</h2>
+<h3>Player who is newest to Gem Trader</h3>
+<% if @newest%>
+    <table>
+        <tr>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td><%=@newest.name%></td>
+        </tr>
+    </table>
+<% else %>
+<p>No Player Found!</p>
+<% end %><br><br>
+
+
+<h2>High Scores</h2>
+<table>
+    <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Points</th>
+    </tr>
+    <% count = 0 %>
+    <% @top_users.each do |user| %>
+    <% count += 1%>
+    <tr>
+        <td><%=count%></td>
+        <td><%=user.name%></td>
+        <td><%=user.points%></td>
+    </tr>
     <% end %>
-</ol>
+</table>
