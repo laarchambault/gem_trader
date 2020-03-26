@@ -7,13 +7,10 @@ class ApplicationController < ActionController::Base
 
     def search_cards_and_remove(card_id)
         current_user.cards.each do |card|
-            #byebug
             if card.id == card_id.to_i
-                #byebug
                 pay_user(card)
                 sold_card = UserCard.find_by(user_id: current_user.id, card_id: card.id)
                 sold_card.destroy
-                #byebug
                 return
             end
         end
