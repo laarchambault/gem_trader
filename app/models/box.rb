@@ -1,6 +1,14 @@
 class Box < ApplicationRecord
     has_many :box_cards
     has_many :cards, through: :box_cards
+
+    def cards_at_least_50
+        card_arr = []
+        until points_total_of_box(card_arr) >= 50
+            card_arr = box_populate
+        end
+        card_arr
+    end
     
     def box_populate
         arr = []
@@ -21,6 +29,14 @@ class Box < ApplicationRecord
             arr << card
         end
         arr.sample(3)
+    end
+
+    def points_total_of_box(array)
+        total = 0
+        array.each do |card|
+            total += card.points_worth
+        end
+        total
     end
 
     def enough_points?(user_points)

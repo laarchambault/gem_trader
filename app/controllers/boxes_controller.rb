@@ -7,7 +7,7 @@ class BoxesController < ApplicationController
 
     def show
         @box = Box.find(params[:id])
-        @box_cards = @box.box_populate
+        @box_cards = @box.cards_at_least_50
         if @box.enough_points?(current_user.points)
             current_user.cards << @box_cards
             current_user.update(points: current_user.points - @box.cost)
