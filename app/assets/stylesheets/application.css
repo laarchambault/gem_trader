@@ -17,7 +17,6 @@
     @import "bootstrap";
     
     h1 {
-        color: red;
         text-align: center;
     }
 
@@ -27,7 +26,8 @@
     }
 
     body {
-        width: 500px;
+        width: 900px;
+        padding: 15px;
         margin: auto;
         background-color: rgb(231, 229, 229);
     }
@@ -37,7 +37,8 @@
     }
 
     .gem {
-        background-color: #462280;
+        background-image: url(card_background.png);
+        background-size: cover;
         color: #fae6f9;
         opacity: 0.95;
         border-style: outset;
@@ -45,8 +46,9 @@
         border-color: #88848a;
         width: 8em;
         height: 12em;
-        margin: 15px;
+        margin: 10px;
         padding: 1em;
         text-align: center;
         display: inline-block;
     }
+        
