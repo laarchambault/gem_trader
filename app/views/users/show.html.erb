@@ -9,9 +9,10 @@
 <h2>All Your Cards</h2>
     <ul>
         <% current_user.cards.each do |card|%>
-            <p><%= card.name %>
-            </p>
+        <div class="gem">
+            <p><%= card.name %></p>
             <p><%= card.points_worth %></p><br>
+        </div>
         <% end %>
     </ul>
 

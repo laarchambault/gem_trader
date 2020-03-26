@@ -13,6 +13,9 @@
     *= require_tree .
     *= require_self
     */
+    @import "bootstrap-sprockets";
+    @import "bootstrap";
+    
     h1 {
         color: red;
         text-align: center;
@@ -31,4 +34,19 @@
 
     p {
         font-size: 17px
+    }
+
+    .gem {
+        background-color: #462280;
+        color: #fae6f9;
+        opacity: 0.95;
+        border-style: outset;
+        border-width: 2px;
+        border-color: #88848a;
+        width: 8em;
+        height: 12em;
+        margin: 15px;
+        padding: 1em;
+        text-align: center;
+        display: inline-block;
     }
