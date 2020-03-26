@@ -1,3 +1,4 @@
+<h1>Pick a Box</h1>
 <ul>
 
 <% @boxes.each do |box| %>
@@ -5,3 +6,10 @@
 <% end %>
 
 </ul>
+
+<h3>Gem Cards Availible</h3>
+<% @boxes.first.cards.each do |card| %>
+    Name: <%= card.name %><br>
+    Worth: <%= card.points_worth %><br>
+    <br>
+<% end %>

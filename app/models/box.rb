@@ -13,15 +13,15 @@ class Box < ApplicationRecord
     def box_populate
         arr = []
         self.cards.map do |card|
-            if card.points_worth.between?(5,25) && self.rarity == "Common"
+            if card_point_range_for_common?(card)
                 10.times do
                     arr << card
                 end
-            elsif card.points_worth.between?(5,150) && self.rarity == "Uncommon"
+            elsif card_point_range_for_uncommon?(card)
                 10.times do
                     arr << card
                 end
-            elsif card.points_worth.between?(151,1000) && self.rarity == "Rare"
+            elsif card_point_range_for_rare?(card)
                 4.times do
                     arr << card
                 end
@@ -29,6 +29,18 @@ class Box < ApplicationRecord
             arr << card
         end
         arr.sample(3)
+    end
+
+    def card_point_range_for_common?(certain_card)
+        !!certain_card.points_worth.between?(5,25) && self.rarity == "Common"
+    end
+
+    def card_point_range_for_uncommon?(certain_card)
+        !!certain_card.points_worth.between?(5,150) && self.rarity == "Uncommon"
+    end
+
+    def card_point_range_for_rare?(certain_card)
+        !!certain_card.points_worth.between?(151,1000) && self.rarity == "Rare"
     end
 
     def points_total_of_box(array)
