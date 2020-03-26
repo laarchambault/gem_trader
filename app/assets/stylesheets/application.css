@@ -14,7 +14,6 @@
     *= require_self
     */
     h1 {
-        color: red;
         text-align: center;
     }
 
@@ -24,11 +23,15 @@
     }
 
     body {
-        width: 500px;
+        width: 900px;
+        padding: 15px;
         margin: auto;
         background-color: rgb(231, 229, 229);
     }
 
-    p {
-        font-size: 17px
+    li.cards {
+        display: inline;
+        /* background-image: url("gt_card");
+        background-repeat: no-repeat;
+        background-size: 100px 100px; */
     }
