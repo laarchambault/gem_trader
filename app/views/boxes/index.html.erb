@@ -9,7 +9,8 @@
 
 <h3>Gem Cards Availible</h3>
 <% @boxes.first.cards.each do |card| %>
-    Name: <%= card.name %><br>
-    Worth: <%= card.points_worth %><br>
-    <br>
+    <div class="gem">
+        <h6><%= card.name %></h6>
+        <p><%= card.points_worth %> pts</p>
+    </div>
 <% end %>

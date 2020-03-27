@@ -12,6 +12,7 @@ class BoxesController < ApplicationController
             current_user.cards << @box_cards
             current_user.update(points: current_user.points - @box.cost)
         else
+            flash[:alert] = "That box was out of your budget."
             return redirect_to user_path(current_user)
         end
     end

@@ -39,16 +39,21 @@
     .gem {
         background-image: url(card_background.png);
         background-size: cover;
-        color: #fae6f9;
+        color: #4b424a;
+        text-shadow: 2px 2px #fae6f9;
         opacity: 0.95;
         border-style: outset;
         border-width: 2px;
         border-color: #88848a;
         width: 8em;
         height: 12em;
-        margin: 10px;
+        margin: 15px;
         padding: 1em;
         text-align: center;
-        display: inline-block;
+        float: left;
+    }
+
+    .gem h6 {
+        letter-spacing: 2px;
     }
         
