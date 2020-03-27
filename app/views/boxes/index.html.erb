@@ -1,8 +1,9 @@
 <h1>Pick a Box</h1>
+<div class=main_back>
 <ul>
 
 <% @boxes.each do |box| %>
-    <li> <%= link_to box.rarity, box_path(box) %> Cost: <%= box.cost %> </li>
+    <button class="ui button"> <%= link_to box.rarity, box_path(box) %> Cost: <%= box.cost %> </button>
 <% end %>
 
 </ul>
@@ -13,3 +14,4 @@
     Worth: <%= card.points_worth %><br>
     <br>
 <% end %>
+</div>
