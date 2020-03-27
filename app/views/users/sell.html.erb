@@ -1,6 +1,6 @@
 <h1>Gem Market</h1>
 <div class=main_back>
-<h2>Ready to sell? Select the cards you wish you sell below.</h2>
+<h2>Ready to sell? Select the cards you wish you sell below.</h2><br>
 <% if current_user.cards.empty? %>
     Darn! You don't have any cards yet. Try buying a box first.<br>
 <% else %>
@@ -9,9 +9,11 @@
     <%= submit_tag "Sell these Cards"%>
 
     <% end %>
-<% end %>
+<% end %><br><br>
 
-
-<%= link_to "Nevermind, don't sell", user_path(current_user)%><br>
+<div class="buttons">
+    <%= link_to "Nevermind, don't sell", user_path(current_user)%><br>
+</div>
+<br>
 
 </div>
