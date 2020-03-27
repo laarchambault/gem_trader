@@ -1,9 +1,10 @@
 <%= @box.rarity %><br>
 
-<ul>
 <% @box_cards.each do |card| %>
-    <li> <%= card.name %>: <%= card.points_worth %> </li>
+    <div class="gem">
+        <h6><%= card.name %></h6>
+        <p><%= card.points_worth %> pts</p>
+    </div>
 <% end %>
-</ul>
-
+<div class="space"></div>
 <%= link_to "Return to Profile", user_path(current_user) %>

@@ -1,14 +1,18 @@
 <h1>Pick a Box</h1>
 <div class=main_back>
-<ul>
 
 <h2>Points: <%=current_user.points%></h2>
 
 <% @boxes.each do |box| %>
-    <%= link_to box.rarity, box_path(box)%> Cost: <%= box.cost %>
-<% end %>
+    <div class=boxes>
+        <%= link_to "#{box.rarity} Cost: #{box.cost} " , box_path(box)%>
+    </div>
+    <% end %>
 
-</ul>
+    <br>
+    <br>
+    <br>
+
 
 <h3>Gem Cards Availible</h3>
 <% @boxes.first.cards.each do |card| %>

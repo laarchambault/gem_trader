@@ -107,3 +107,16 @@
         padding: 1em;
         border-radius: 6px;
     }
+
+    .boxes a{
+        color: white;
+        background-color: #63278b;
+        margin: 10px;
+        padding: 0.7em;
+        border-radius: 5px;
+        float: left;
+        width: 30%;
+        text-align: center;
+    }
+
+    .space { margin-bottom: 250px;}
