@@ -3,6 +3,17 @@
         <%= msg %>
     </div>
 <% end %><br><br>
+<div class=main_back>
+<h1>Welcome to Gem Trader</h1>
+    <p class=welcome_desc>
+        Gem Trader is a small web application that allows users to buy, sell, and collect
+        Gem Cards.<br>
+        To get started, please create an account.<br>
+        If you already have an account with us, please login to return to your profile.<br>
+        <br>
+        Happy Trading!
+    </p>    
+</div>
 <%= link_to "Create a New Account", new_user_path%><br>
 <%= link_to "View Leaderboard", users_path%><br>
 Existing user? <%= link_to "Sign In", login_path %>
