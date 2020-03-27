@@ -5,6 +5,6 @@ class Card < ApplicationRecord
     has_many :boxes, through: :box_cards
 
     def display_card
-        "#{self.name}: #{self.points_worth} points."
+        "   #{self.name}: #{self.points_worth} points."
     end
 end

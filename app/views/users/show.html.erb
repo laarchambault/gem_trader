@@ -1,13 +1,16 @@
 <div class=main_back>
-<h1><%= @user.name%></h1>
+<h1>Welcome, <%= @user.name%>!</h1>
 <h2>Points: <%=current_user.points%></h2>
 <% flash.each do |type, msg| %>
     <div>
         <%= msg %>
     </div>
 <% end %><br><br>
-
-<h2>All Your Cards</h2><br>
+<div class="buttons">
+<%=link_to "Sell Cards", '/sell_cards', class: "middle"%><%#no middle css done%>
+<%=link_to "Buy a Box of Cards", boxes_path, class: "middle"%>
+</div><br><br>
+<h2>Your Cards</h2><br>
     <% if current_user.cards.empty? %>
     <p>No Cards! Time to buy another box.</p>
     <% end %>
@@ -18,9 +21,5 @@
     </div>
     <% end %><br>
 
-<%=link_to "Sell Cards", '/sell_cards'%><br>
-<%=link_to "Buy a Box of Cards", boxes_path%>
 <br><br>
-<%= link_to "View Leaderboard", users_path%><br>
-<%= link_to "Log out", logout_path, method: "post" %>
 </div>

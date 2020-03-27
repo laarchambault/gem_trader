@@ -21,13 +21,13 @@
     <%= link_to "High Scores", users_path, class: "left"%>
 
         <%if current_user %>
-      <%= link_to "Logout", logout_path, method: "post", class: "left"%>
+      <%= link_to "Logout", logout_path, method: "post", class: "right"%>
     <% else %>
-      <%= link_to "Login", login_path, class: "left"%>
+      <%= link_to "Login", login_path, class: "right"%>
     <% end %>
   </div>
 
-  <h1><%= image_tag 'gt_logo.png' %></h1>
+  <h1 id="logo"><%= image_tag 'gt_logo.png' %></h1>
     <%= yield %>
   </body>
 </html>
