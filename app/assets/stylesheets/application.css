@@ -13,8 +13,7 @@
     *= require_tree .
     *= require_self
     */
-    @import "bootstrap-sprockets";
-    @import "bootstrap";
+
     
     h1 {
         text-align: center;
@@ -93,3 +92,10 @@
         color: white;
     }
         
+    .buttons a {
+        color: white;
+        background-color: #63278b;
+        margin: 2px;
+        padding: 1em;
+        border-radius: 6px;
+    }
