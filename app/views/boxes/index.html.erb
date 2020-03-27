@@ -1,16 +1,25 @@
 <h1>Pick a Box</h1>
+<div class=main_back>
 <ul>
 
 <% @boxes.each do |box| %>
-    <li> <%= link_to box.rarity, box_path(box) %> Cost: <%= box.cost %> </li>
+    <button class="ui button"> <%= link_to box.rarity, box_path(box) %> Cost: <%= box.cost %> </button>
 <% end %>
 
 </ul>
 
 <h3>Gem Cards Availible</h3>
 <% @boxes.first.cards.each do |card| %>
+<<<<<<< HEAD
     <div class="gem">
         <h6><%= card.name %></h6>
         <p><%= card.points_worth %> pts</p>
     </div>
 <% end %>
+=======
+    Name: <%= card.name %><br>
+    Worth: <%= card.points_worth %><br>
+    <br>
+<% end %>
+</div>
+>>>>>>> b71c0644372c006433f62032ce854523b6f25fda

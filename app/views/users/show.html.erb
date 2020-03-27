@@ -1,3 +1,4 @@
+<div class=main_back>
 <h1><%= @user.name%></h1>
 <h2>Points: <%=current_user.points%></h2>
 <% flash.each do |type, msg| %>
@@ -22,3 +23,4 @@
 <br><br>
 <%= link_to "View Leaderboard", users_path%><br>
 <%= link_to "Log out", logout_path, method: "post" %>
+</div>
