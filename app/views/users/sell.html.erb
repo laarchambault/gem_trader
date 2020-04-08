@@ -5,7 +5,9 @@
     Darn! You don't have any cards yet. Try buying a box first.<br>
 <% else %>
     <%= form_tag '/sell_cards' do %>
-    <%= collection_check_boxes(:user, :cards_to_sell, current_user.cards, :id, :display_card) %>
+    <%= collection_check_boxes(:user, :cards_to_sell, current_user.cards.order(:points_worth).order(:name), :id, :display_card) do |b| %>
+    <%= b.label { b.check_box + b.text } %><br>
+    <% end %>
     <%= submit_tag "Sell these Cards"%>
 
     <% end %>
