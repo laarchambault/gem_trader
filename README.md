@@ -1,24 +1,31 @@
-# README
+# Gem Trader
+## by Ariel Davis and Laura Archambault
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Image](./app/assets/images/welcome.png)
 
-Things you may want to cover:
+Gem Trader is a simple game for collecting and selling cards. Cards are themed with various gems. A player can buy a box of cards and hope for the rarest, most highly-valued gem cards. 
 
-* Ruby version
+![Image](./app/assets/images/new_account.png)
 
-* System dependencies
+Buy and sell to build your collection and try to land on the leaderboard.
 
-* Configuration
+![Image](./app/assets/images/buy_a_box.png)
 
-* Database creation
+## To play this game:
 
-* Database initialization
+* computer prereq's: Ruby, SQLite3, and Rails
 
-* How to run the test suite
+* fork and clone the github repo: https://github.com/laarchambault/gem_trader
 
-* Services (job queues, cache servers, search engines, etc.)
+* cd into the app in your terminal and run `bundle install`
 
-* Deployment instructions
+* run the rails command `rails server` to serve the game on your computer
 
-* ...
+* navigate to http:/localhost:3000 to play
+
+## About the Developers
+Ariel Davis and Laura Archambault created this app while students at Flatiron School, Atlanta campus. The project assignment was to create a Rails application, both front- and backend using 5 models. Students were to demonstrate an understanding of ActiveRecord and the MVC pattern.
+
+We are excited to showcase this project after just six weeks of instruction. Building on the instruction we received in class, we self-taught rudimentary probability, CSS, and a few complex Ruby/HTML operators.
+
+
