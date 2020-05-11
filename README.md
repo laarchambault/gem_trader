@@ -23,6 +23,9 @@ Buy and sell to build your collection and try to land on the leaderboard.
 
 * navigate to http:/localhost:3000 to play
 
+## Demo
+While this code is not in production stage, you can see the demo here: https://youtu.be/GNFE0givTTA
+
 ## About the Developers
 Ariel Davis and Laura Archambault created this app while students at Flatiron School, Atlanta campus. The project assignment was to create a Rails application, both front- and backend using 5 models. Students were to demonstrate an understanding of ActiveRecord and the MVC pattern.
 
